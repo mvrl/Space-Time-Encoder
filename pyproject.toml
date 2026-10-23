@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ste"
+version = "0.1.0"
+description = "Space-Time Encoder (Mickisch et al., 2025) reimplemented with LayerNorm and trained on CHELSA"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+dependencies = ["torch>=2.1", "numpy", "safetensors"]
+
+[project.optional-dependencies]
+data = ["rasterio"]
+
+[project.urls]
+Repository = "https://github.com/mvrl/Space-Time-Encoder"
+
+[tool.setuptools]
+packages = ["ste"]
+
+[tool.setuptools.package-data]
+ste = ["weights.safetensors"]
